@@ -1,0 +1,3 @@
+doctor
+hebrew_tui
+import_tanakh

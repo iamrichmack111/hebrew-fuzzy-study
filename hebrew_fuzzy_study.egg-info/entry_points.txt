@@ -1,0 +1,4 @@
+[console_scripts]
+hebrew-fuzzy = hebrew_tui:main
+hebrew-fuzzy-doctor = doctor:main
+hebrew-fuzzy-import-tanakh = import_tanakh:main

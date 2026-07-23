@@ -1,0 +1,2 @@
+textual>=0.70
+rapidfuzz>=3.0

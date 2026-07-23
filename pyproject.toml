@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hebrew-fuzzy-study"
+version = "1.0.0"
+description = "Terminal-based Hebrew lexical search, Tanakh reader, scholar reference, and annotation workstation."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "textual>=0.70",
+    "rapidfuzz>=3.0"
+]
+
+[project.scripts]
+hebrew-fuzzy = "hebrew_tui:main"
+hebrew-fuzzy-import-tanakh = "import_tanakh:main"
+hebrew-fuzzy-doctor = "doctor:main"
+
+[tool.setuptools]
+py-modules = ["hebrew_tui", "import_tanakh", "doctor"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,12 @@
+README.md
+doctor.py
+hebrew_tui.py
+import_tanakh.py
+pyproject.toml
+hebrew_fuzzy_study.egg-info/PKG-INFO
+hebrew_fuzzy_study.egg-info/SOURCES.txt
+hebrew_fuzzy_study.egg-info/dependency_links.txt
+hebrew_fuzzy_study.egg-info/entry_points.txt
+hebrew_fuzzy_study.egg-info/requires.txt
+hebrew_fuzzy_study.egg-info/top_level.txt
+tests/test_core.py

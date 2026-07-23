@@ -1,0 +1,141 @@
+# Hebrew Fuzzy Study v10
+
+![Hebrew Fuzzy Study](docs/hebrew-fuzzy-thumbnail.png)
+
+
+## New in v3
+
+### True Tanakh reader
+- Select a book and chapter.
+- Scroll verse-by-verse.
+- Hebrew and English are displayed **side by side** for the highlighted verse.
+- Search English text, verse references, or Hebrew text.
+- From a dictionary word, press `V` to find verses containing that Hebrew form.
+
+### Verse-linked notes
+Every note in the Tanakh reader is attached to the selected verse by database ID.
+
+A verse note stores:
+- reference
+- Hebrew text
+- English text
+- tag
+- your note
+- created timestamp
+
+### Export
+Press `E` or click **Export Verse Notes**.
+
+The app exports both:
+
+```text
+~/Documents/hebrew-fuzzy-exports/verse-notes-YYYYMMDD-HHMMSS.csv
+~/Documents/hebrew-fuzzy-exports/verse-notes-YYYYMMDD-HHMMSS.md
+```
+
+The Markdown export includes the Hebrew and English verse beside each note.
+
+## Important: importing the Tanakh
+
+The packaged seed database contains the Strong's dictionary, but **not the full Tanakh**.
+
+After installation run:
+
+```bash
+hebrew-fuzzy-import-tanakh
+```
+
+Then restart:
+
+```bash
+hebrew-fuzzy
+```
+
+The Tanakh tab reports the number of verse rows loaded. If it says **Tanakh not imported**, the importer has not completed successfully.
+
+## Upgrade/install
+
+```bash
+unzip hebrew-fuzzy-tui-v3.zip
+cd hebrew-fuzzy-tui-v3
+bash install.sh
+```
+
+The v3 installer does **not overwrite an existing working database**, so existing notes are preserved.
+
+## Controls
+
+```text
+R       Tanakh reader
+V       Find verses containing selected dictionary word
+N       Word notes
+E       Export all verse-linked notes
+Space   Select dictionary word
+P       Word permutations
+Q       Quit
+```
+
+
+## Scholar tab
+
+v4 adds an offline scholarly reference covering:
+
+- common Biblical Hebrew prefixes
+- common suffixes and pronominal suffixes
+- transliteration conventions
+- roots and verbal stems/binyanim
+- formal/source-oriented translation
+- dynamic/functional equivalence
+- idiomatic translation and paraphrase
+- Skopos theory
+- text-critical and lexical cautions
+- research-source notes
+
+The scholar material deliberately keeps Hebrew source text, morphology, lexical gloss,
+English translation, and personal interpretation as separate analytical layers.
+
+
+## v5 selection/permutation export
+
+- Maximum selection increased from 6 to **10 words**.
+- The TUI previews at most **5,000 permutations** to avoid freezing the terminal.
+- Selected words export to both CSV and Markdown.
+- Permutations export to both CSV and Markdown.
+- Up to 8 selected words, the permutation export is complete (8! = 40,320).
+- With 9 or 10 selected words, export is capped at the first **100,000** permutations.
+  The file explicitly records that it is a capped export and records the total possible count.
+- Full 9!/10! generation is intentionally blocked because 9! = 362,880 and
+  10! = 3,628,800 rows.
+
+Exports are written to:
+
+```text
+~/Documents/hebrew-fuzzy-exports/
+```
+
+### Export controls
+
+```text
+X          Export selected words
+Shift+X    Export permutations
+```
+
+The Selected and Permutations tabs also contain export buttons.
+
+## Scholar display fix
+
+The Scholar reference panel now has a flexible height, scroll support, padding, and a visible border.
+This fixes the v4 issue where the material could appear blank/collapsed in some terminal sizes.
+
+
+## v10
+
+- Splash page removed completely.
+- App opens directly to the main dictionary/search interface.
+- Scholar tab restored and verified.
+- Scholar guide includes prefixes, suffixes, transliteration, morphology,
+  translation approaches, Skopos theory, text-critical cautions, and sources.
+- Scholar content is scrollable with a minimum visible height.
+- Press `S` to open Scholar directly.
+- Up to 10 words can be selected.
+- Word Orders shows only Original Order and Reverse Order.
