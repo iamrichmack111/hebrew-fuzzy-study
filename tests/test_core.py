@@ -1,7 +1,7 @@
 from pathlib import Path
 import sqlite3
 
-from hebrew_tui import normalize_hebrew, normalize_latin, SCHOLAR_TOPICS
+from hebrew_fuzzy_study.hebrew_tui import normalize_hebrew, normalize_latin, SCHOLAR_TOPICS
 
 
 def test_latin_normalization():
