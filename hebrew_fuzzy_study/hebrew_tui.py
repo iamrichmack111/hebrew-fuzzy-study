@@ -972,3 +972,12 @@ class HebrewFuzzy(App):
 
 if __name__ == "__main__":
     HebrewFuzzy().run()
+
+
+def main():
+    app = HebrewFuzzy()
+    app.run()
+
+
+if __name__ == "__main__":
+    main()

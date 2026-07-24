@@ -215,7 +215,15 @@ def main() -> int:
 
         engzip = work / "engjps_vpl.zip"
         print("Downloading JPS 1917 English Tanakh...")
-        urllib.request.urlretrieve(ENGLISH_ZIP, engzip)
+        req = urllib.request.Request(
+            ENGLISH_ZIP,
+            headers={
+                "User-Agent": "Mozilla/5.0",
+                "Accept": "*/*",
+            },
+        )
+        with urllib.request.urlopen(req) as response, open(engzip, "wb") as out:
+            out.write(response.read())
 
         engdir = work / "engjps"
         engdir.mkdir()

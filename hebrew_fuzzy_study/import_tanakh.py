@@ -214,8 +214,15 @@ def main() -> int:
         ], check=True)
 
         engzip = work / "engjps_vpl.zip"
-        print("Downloading JPS 1917 English Tanakh...")
-        urllib.request.urlretrieve(ENGLISH_ZIP, engzip)
+        print("Loading bundled JPS 1917 English Tanakh...")
+
+        bundled_jps = Path(__file__).resolve().parent / "data" / "engjps_vpl.zip"
+        if not bundled_jps.exists():
+            raise FileNotFoundError(
+                f"Bundled JPS archive not found: {bundled_jps}"
+            )
+
+        shutil.copy2(bundled_jps, engzip)
 
         engdir = work / "engjps"
         engdir.mkdir()
